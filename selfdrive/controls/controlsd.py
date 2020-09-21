@@ -342,7 +342,7 @@ class Controls:
 
     # Check if actuators are enabled
     #self.active = self.state == State.enabled or self.state == State.softDisabling
-    self.active = self.state == State.enabled or self.state == State.softDisabling or True
+    self.active = self.state == State.enabled
 
     if self.active:
       self.current_alert_types.append(ET.WARNING)
@@ -404,8 +404,7 @@ class Controls:
     """Send actuators and hud commands to the car, send controlsstate and MPC logging"""
 
     CC = car.CarControl.new_message()
-    #CC.enabled = self.enabled
-    CC.enabled = True
+    CC.enabled = self.enabled
     CC.actuators = actuators
 
     CC.cruiseControl.override = True
