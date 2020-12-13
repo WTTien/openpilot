@@ -114,11 +114,16 @@ static void set_awake(UIState *s, bool awake) {
   }
 }
 
+// The vision view when ignition is on
 static void handle_vision_touch(UIState *s, int touch_x, int touch_y) {
   if (s->started && (touch_x >= s->scene.viz_rect.x - bdr_s)
       && (s->active_app != cereal::UiLayoutState::App::SETTINGS)) {
     if (!s->scene.frontview) {
-      s->scene.uilayout_sidebarcollapsed = !s->scene.uilayout_sidebarcollapsed;
+	if (touch_x >= s->scene.viz_rect.x + (bdr_s*2)) {
+          s->scene.uilayout_sidebarcollapsed = s->scene.uilayout_sidebarcollapsed;
+        } else {
+	  s->scene.uilayout_sidebarcollapsed = !s->scene.uilayout_sidebarcollapsed;
+	}
     } else {
       write_db_value("IsDriverViewEnabled", "0", 1);
     }
