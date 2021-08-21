@@ -14,7 +14,7 @@ FINGERPRINTS = {
   }],
   CAR.PERODUA_BEZZA: [{
     33: 8, 40: 3, 71: 8, 72: 5, 73: 6, 76: 7, 77: 7, 85: 7, 88: 5, 102: 6, 107: 4, 128: 5, 384: 4, 592: 8, 593: 8, 802: 7, 945: 2, 977: 3, 1088: 8, 1090: 8, 1100: 8, 1162: 8, 1163: 8, 1164: 8, 1217: 8, 1218: 8, 1219: 8, 1224: 8, 1245: 8, 1552: 4, 1584: 6, 1586: 7, 1588: 8, 1595: 8, 1616: 8
-  }],
+  }]
 }
 
 ECU_FINGERPRINT = {
@@ -24,5 +24,5 @@ ECU_FINGERPRINT = {
 
 DBC = {
   CAR.PERODUA_AXIA: dbc_dict('perodua_general_pt', None),
-  CAR.PERODUA_BEZZA: dbc_dict('perodua_general_pt', None),
+  CAR.PERODUA_BEZZA: dbc_dict('perodua_general_pt', None)
 }
